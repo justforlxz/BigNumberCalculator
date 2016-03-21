@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1399828363 source:d:\宇强\desktop\小系统制作\大数运算器\大数计算器\main.cpp
+	<iostream>
+	"BigNumber.h"
+	"menu.cpp"
+
+1399827813 d:\宇强\desktop\小系统制作\大数运算器\大数计算器\bignumber.h
+	<iostream>
+	<string>
+	<cstring>
+
+1399828749 d:\宇强\desktop\小系统制作\大数运算器\大数计算器\menu.cpp
+	"BigNumber.h"
+	<iostream>
+	<string>
+	<cstdlib>
+
+1399828363 source:e:\编程\c++\小系统制作\大数计算器\main.cpp
+	<iostream>
+	"BigNumber.h"
+	"menu.cpp"
+
+1407157966 e:\编程\c++\小系统制作\大数计算器\bignumber.h
+	<iostream>
+	<string>
+	<cstring>
+
+1407157969 e:\编程\c++\小系统制作\大数计算器\menu.cpp
+	"BigNumber.h"
+	<iostream>
+	<string>
+	<cstdlib>
+

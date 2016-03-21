@@ -1,0 +1,53 @@
+#include<iostream>
+#include<string>///     参数设置
+#include<cstring>///      BigNumber和普通数据类型的运算     运算之后答案是负数的情况   是小数的情况   减法负号问题
+#define MAX_SIZE 100///
+using namespace std;
+class BigNumber
+{
+    long num[MAX_SIZE];///数组倒置储存，方便进位操作
+    int Length;
+public:
+    BigNumber();
+    BigNumber(int i);///Length=-1的特殊数据，表示不存在这个数符合计算条件的返回值
+    BigNumber(char* str);
+    BigNumber(const char* str);
+    BigNumber(string s);
+    BigNumber(long val);
+    BigNumber(const BigNumber& b);
+    BigNumber(long a[],int front,int size);///a[]中从pos起size位作为BigNumber构造
+    int length();
+    void print();
+
+    BigNumber& operator=(BigNumber n1);
+
+    friend bool operator>(BigNumber& n1,BigNumber& n2);
+    friend bool operator<(BigNumber& n1,BigNumber& n2);
+    friend bool operator>=(BigNumber& n1,BigNumber& n2);
+    friend bool operator<=(BigNumber& n1,BigNumber& n2);
+    friend bool operator==(BigNumber& n1,BigNumber& n2);
+    friend bool operator!=(BigNumber& n1,BigNumber& n2);
+
+    BigNumber& operator>>(int s);///右移运算符    将数组中所有元素整体向右移s位，下标变成负数的舍去
+    BigNumber operator<<(int s);///左移运算符   将数组中所有元素整体向左移s位，相当于*10的s次方
+
+    friend BigNumber operator+(BigNumber& n1,BigNumber& n2);
+    friend BigNumber operator*(BigNumber& n1,BigNumber& n2);
+    friend BigNumber operator-(BigNumber& bn1,BigNumber& bn2);
+    friend BigNumber operator/(BigNumber n1,BigNumber n2);
+    friend BigNumber operator%(BigNumber& n1,BigNumber& n2);
+
+    BigNumber& operator+=(BigNumber& n);
+    BigNumber& operator-=(BigNumber& n);
+    BigNumber& operator*=(BigNumber& n);
+    BigNumber& operator/=(BigNumber& n);
+    BigNumber& operator%=(BigNumber& n);
+
+    BigNumber& operator++();
+    BigNumber operator++(int);
+    BigNumber& operator--();
+    BigNumber operator--(int);
+
+    friend istream& operator>>(istream& is,BigNumber& n);
+    friend ostream& operator<<(ostream& os,const BigNumber& n);
+};
